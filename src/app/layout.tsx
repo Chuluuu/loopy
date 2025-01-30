@@ -31,35 +31,35 @@ export const metadata: Metadata = {
       {
         rel: "icon",
         type: "image/ico",
-        url: "/public/favicon_io/favicon.ico",
+        url: "/favicon_io/favicon.ico",
       },
       {
         rel: "icon",
         type: "image/png",
         sizes: "16x16",
-        url: "/public/favicon_io/favicon-16x16.png",
+        url: "/favicon_io/favicon-16x16.png",
       },
       {
         rel: "icon",
         type: "image/png",
         sizes: "32x32",
-        url: "/public/favicon_io/favicon-32x32.png",
+        url: "/favicon_io/favicon-32x32.png",
       },
       {
         rel: "icon",
         type: "image/png",
         sizes: "192x192",
-        url: "/public/favicon_io/android-chrome-192x192.png",
+        url: "/favicon_io/android-chrome-192x192.png",
       },
       {
         rel: "icon",
         type: "image/png",
         sizes: "512x512",
-        url: "/public/favicon_io/android-chrome-512x512.png",
+        url: "/favicon_io/android-chrome-512x512.png",
       },
     ],
   },
-  manifest: "/public/favicon_io/site.webmanifest",
+  manifest: "/favicon_io/site.webmanifest",
 };
 
 export default function RootLayout({
