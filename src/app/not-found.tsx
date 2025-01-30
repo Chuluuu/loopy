@@ -17,7 +17,7 @@ export default function NotFound() {
           href="/"
           className="mt-8 text-sm font-medium text-slate-900 dark:text-white"
         >
-          Go back home
+          Нүүр хуудас руу буцах
         </Link>
       </div>
     </div>

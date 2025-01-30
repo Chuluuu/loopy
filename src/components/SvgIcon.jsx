@@ -1,12 +1,13 @@
 import Login from "@/components/icons/login-1.svg";
-
-const svgIcons = { login: Login };
+import Logo from "@/components/icons/logo.svg";
+import LogoBlue from "@/components/icons/logoblue.svg";
+const svgIcons = { login: Login, logo: Logo, logoblue: LogoBlue };
 export function SvgIcon(props) {
-  const { name, className, width, height, size } = props;
+  const { name, className, width, height, size, color } = props;
   const SvgIcon = svgIcons[name];
 
   return (
-    <span className={`inline-flex ${className}`}>
+    <span className={`inline-flex ${className}`} style={{ color }}>
       <SvgIcon
         aria-hidden="true"
         width={size || width || 18}

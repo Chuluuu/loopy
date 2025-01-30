@@ -7,8 +7,12 @@ import { SvgIcon } from '@/components/SvgIcon'
 import { HeroBackground } from '@/components/HeroBackground'
 import blurCyanImage from '@/images/blur-cyan.png'
 import blurIndigoImage from '@/images/blur-indigo.png'
-import heroImage from '@/images/hero.png'
+import heroImage from '@/images/slides/tech-home-slide-2-img-1.png'
 import { Link } from 'lucide-react'
+import DialogUi from './DialogUi'
+import Slider from './slider'
+import { CarouselDemo } from './CarouselDemo'
+import { CarouselWithDots } from './CarouselWithDots'
 
 const codeLanguage = 'javascript'
 const code = `export default {
@@ -36,9 +40,9 @@ function TrafficLightsIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export function Hero() {
   return (
-    <div className="overflow-hidden  -mb-32 mt-[-4.75rem] pb-32 pt-[4.75rem]">
+    <div className="overflow-hidden -mb-32 mt-[-4.75rem] pb-32 pt-[1.75rem]">
       <div className="py-16 sm:px-2 lg:relative lg:px-0 lg:py-20">
-        <div className="mx-auto grid max-w-8xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 lg:max-w-10xl  xl:gap-x-16 ">
         
           <div className="relative z-10 md:text-center lg:text-left">
             <Image
@@ -50,29 +54,9 @@ export function Hero() {
               unoptimized
               priority
             />
-            <div className="relative">
-              <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display font-proxyma text-5xl tracking-tight text-transparent">
-                Help, tutorials & documentation.
-              </p>
-              <p className="mt-3 font-proxyma text-2xl tracking-tight text-slate-400">
-                Learn how to unleash your coding productivity by taking and
-                organizing tech notes with Inkdrop.
-              </p>
-              <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                <Link
-                  href="https://my.inkdrop.app/"
-                  className="inline-flex items-center justify-center gap-1"
-                >
-                  {/* <SvgIcon name="login" /> */}
-                  Log in
-                </Link>
-                <Link href="https://www.inkdrop.app/" >
-                  What is Inkdrop?
-                </Link>
-              </div>
-            </div>
+            
           </div>
-          <div className="relative lg:static xl:pl-10">
+          <div className="relative lg:static">
             <div className="absolute inset-x-[-50vw] -bottom-48 -top-32  lg:-bottom-32 lg:-top-32 lg:left-[calc(50%+14rem)] lg:right-0  [mask-image:linear-gradient(transparent,white,transparent)] lg:[mask-image:linear-gradient(white,white,transparent)]">
               <HeroBackground className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-0 lg:translate-x-0 lg:translate-y-[-60%]" />
             </div>
@@ -95,12 +79,16 @@ export function Hero() {
                 unoptimized
                 priority
               />
-              <Image
+              {/* <Image
                 src={heroImage}
                 alt="A dog hacking Inkdrop"
                 priority
-                className="scale-150"
-              />
+                width={350}
+                height={350}
+                className="scale-80"
+              /> */}
+              <CarouselWithDots/>
+              {/* <DialogUi/> */}
             </div>
           </div>
         </div>

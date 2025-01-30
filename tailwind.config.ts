@@ -19,9 +19,26 @@ const config = {
       },
     },
     extend: {
+      fontSize: {
+        xs: ['0.75rem', { lineHeight: '1rem' }],
+        sm: ['0.875rem', { lineHeight: '1.5rem' }],
+        base: ['1rem', { lineHeight: '2rem' }],
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],
+        xl: ['1.25rem', { lineHeight: '2rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2.5rem' }],
+        '3xl': ['2rem', { lineHeight: '2.5rem' }],
+        '4xl': ['2.5rem', { lineHeight: '3rem' }],
+        '5xl': ['3rem', { lineHeight: '3.5rem' }],
+        '6xl': ['3.75rem', { lineHeight: '1' }],
+        '7xl': ['4.5rem', { lineHeight: '1' }],
+        '8xl': ['6rem', { lineHeight: '1' }],
+        '9xl': ['8rem', { lineHeight: '1' }],
+      },
       fontFamily: {
-        sans: ["var(--font-inter)", ...fontFamily.sans],
+        // sans: ["var(--font-inter)", ...fontFamily.sans],
+        sans: ["var(--font-roboto)", ...fontFamily.sans],
         display: ['var(--font-lexend)', { fontFeatureSettings: '"ss01"' }],
+        
       },
       colors: {
         border: "hsl(var(--border))",
@@ -72,10 +89,60 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        fadeIn: {
+          '0%': { opacity: "0" },
+          '100%': { opacity: "1" },
+        },
+        fadeAndMove: {
+          '0%': { opacity: "0", top: '10%' }, 
+          '100%': { opacity: "1", top: '12%' }, 
+        }, 
+        fadeAndMove1: {
+          '0%': { opacity: "0", top: '6%' }, 
+          '100%': { opacity: "1", top: '8%' }, 
+        }, 
+        fadeAndMoveSlide1: {
+          '0%': { opacity: "0", top: '-20%' }, 
+          '100%': { opacity: "1", top: '-10%' }, 
+        },
+        fadeAndMoveSlide2: {
+          '0%': { opacity: "0", top: '-50%' }, 
+          '100%': { opacity: "1", top: '-35%' }, 
+        },
+        fadeAndMoveSlide4: {
+          '0%': { opacity: "0", top: '-50%' }, 
+          '100%': { opacity: "1", top: '-30%' }, 
+        },
+        fadeAndMoveSlide5: {
+          '0%': { opacity: "0", left: '10%' }, 
+          '100%': { opacity: "1", left: '30%' }, 
+        },
+        fadeAndMoveSlide6: {
+          '0%': { opacity: "0", left: '90%' }, 
+          '100%': { opacity: "1", left: '60%' }, 
+        },
+        fadeScale: {
+          '0%': { opacity: "0", transform: 'scale(0.9)' }, // Start at 90% scale
+          '100%': { opacity: "1", transform: 'scale(1)' }, // End at 100% scale
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        'fade-in': 'fadeIn 1s ease-in-out',
+        'fade-and-move': 'fadeAndMove 1s ease-in-out',
+        'fade-and-move1': 'fadeAndMove1 1s ease-in-out',
+        'fade-and-move2': 'fadeAndMoveSlide1 1s ease-in-out',
+        'fade-and-move3': 'fadeAndMoveSlide2 1s ease-out',
+        'fade-and-move4': 'fadeAndMoveSlide4 1s ease-out',
+        'fade-and-move5': 'fadeAndMoveSlide5 1s ease-out',
+        'fade-and-move6': 'fadeAndMoveSlide6 1s ease-out',
+        'fade-scale': 'fadeScale 1s ease-in-out', 
+
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '10xl':'100rem'
       },
     },
   },
