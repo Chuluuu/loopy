@@ -125,6 +125,14 @@ const config = {
           '0%': { opacity: "0", transform: 'scale(0.9)' }, // Start at 90% scale
           '100%': { opacity: "1", transform: 'scale(1)' }, // End at 100% scale
         },
+        slide: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        slideReverse: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -138,6 +146,8 @@ const config = {
         'fade-and-move5': 'fadeAndMoveSlide5 1s ease-out',
         'fade-and-move6': 'fadeAndMoveSlide6 1s ease-out',
         'fade-scale': 'fadeScale 1s ease-in-out', 
+        'slide': 'slide 30s linear infinite',
+        'slideReverse': 'slideReverse 30s linear infinite',
 
       },
       maxWidth: {
