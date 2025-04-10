@@ -41,7 +41,7 @@ export function CarouselWithDots() {
     <div className="relative w-full">
       <Carousel
         className="w-full"
-        onChange={(index) => handleSlideChange(index)} // Listen for slide changes
+        // onChange={(index) => handleSlideChange(index)} // Listen for slide changes
       >
         <Slider index={activeIndex}/>
       </Carousel>
