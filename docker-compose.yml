@@ -1,15 +1,31 @@
 version: '3.8'
 
 services:
-  frontend-app:
-    container_name: frontend
+  frontend-loopy:
+    container_name: frontend-loopy
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    volumes:
-      - .:/app
+    # volumes:
+    #   - .:/app
     environment:
       NODE_ENV: production
     restart: unless-stopped
+    networks:
+      - appnet
+  
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend-loopy
+    networks:
+      - appnet
+networks:
+  appnet:
