@@ -9,6 +9,7 @@ import { Hero } from './HeroSection'
 import { Footer } from './Footer'
 import AppLogo from "@/components/icons/logo.png"
 import AppLogoBlue from "@/components/icons/logoblue.svg"
+import TechStackGrid from './static/techstack'
 
 function Header() {
     let [isScrolled, setIsScrolled] = useState(false)
@@ -47,7 +48,7 @@ function Header() {
         <div className="relative flex basis-0 items-center justify-end gap-5 sm:gap-7 md:flex-grow">
           <ThemeToggle/>
           <Link
-            href="https://my.inkdrop.app/"
+            href="/"
             className="inline-flex flex-nowrap items-center gap-1 whitespace-nowrap rounded-full  px-3 py-1 text-sm text-sky-500 ring-1 ring-sky-300 hover:bg-sky-100 hover:text-sky-600 hover:ring-sky-500 dark:bg-sky-400/10 dark:text-sky-400 dark:ring-inset dark:ring-sky-400/20 dark:hover:bg-sky-400/10 dark:hover:text-sky-300 dark:hover:ring-sky-300 ">
             <SvgIcon name="login" width={14} height={14} />
             Log in
@@ -62,6 +63,7 @@ function Layout({children}:{children:React.ReactNode}) {
         <Header/>
         <Hero/>
         {children}
+        <TechStackGrid />
         <Footer/>
     </div>
   )
