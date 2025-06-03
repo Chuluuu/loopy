@@ -1,19 +1,19 @@
 
 const ContactUs = () => {
   return (
-    <div className="py-5 px-20">
+    <div className="py-5 px-4 md:px-20">
       <div className="flex gap-4 flex-col">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4">Холбоо барих</h1>          
+        <div className="text-center md:mb-12">
+          <h1 className="text-2xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4">Холбоо барих</h1>          
           <div className="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
         </div>
 
         {/* Main Content */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <div className="bg-blue-50 dark:bg-slate-700 p-8 rounded-2xl shadow-md p-6">
-          <h3 className="text-2xl font-semibold text-blue-400 mb-4">Бидэнтэй холбогдох</h3>
+          <div className="bg-blue-50 dark:bg-slate-700 p-8 rounded-2xl shadow-md ">
+          <h3 className="text-xl md:text-2xl font-semibold text-blue-400 mb-4">Бидэнтэй холбогдох</h3>
             
             <div className="space-y-6">
               {/* Address */}
@@ -92,7 +92,7 @@ const ContactUs = () => {
 
           {/* Contact Form */}
           <div className="bg-blue-50 dark:bg-slate-700 p-8 rounded-2xl shadow-md ">
-            <h3 className="text-2xl font-semibold text-blue-400 mb-4">Бидэн рүү бичих</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-blue-400 mb-4">Бидэн рүү бичих</h3>
             <form className="space-y-6">
               <div>              
                 <label htmlFor="name" className="block text-sm font-medium dark:text-gray-300 mb-1">Нэр</label>
@@ -152,7 +152,7 @@ const ContactUs = () => {
 
         {/* Map Section */}
         <div className="mt-12 bg-blue-50 dark:bg-slate-700 rounded-2xl shadow-md p-6">
-          <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-6 text-center">Бидний байршил</h3>
+          <h3 className="text-xl md:text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-6 text-center">Бидний байршил</h3>
           <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2674.897799373012!2d106.9152763156456!3d47.91837397920538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9692599f4f1e6d%3A0x1c1d4b9e8a0b9e6d!2sSeoul%20Street%2C%20Ulaanbaatar!5e0!3m2!1sen!2smn!4v1620000000000!5m2!1sen!2smn"
