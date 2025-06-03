@@ -36,7 +36,7 @@ const ThemeToggle = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // Prevents SSR issues
+  // if (!mounted) return null; // Prevents SSR issues
 
   return (
     <Switch
