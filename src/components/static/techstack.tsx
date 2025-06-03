@@ -70,7 +70,7 @@ const TechStackGrid=() => {
   const stacks = techStacksMn;
   return (
     <div className="flex flex-col p-6 gap-2">
-      <div className="overflow-hidden relative  mx-12">
+      <div className="overflow-hidden relative  md:mx-12 mx-0">
         {/* Left and Right gradient masks */}
         <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white via-white/70 to-transparent dark:from-slate-900 dark:via-slate-900/70 z-10" />
         <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white via-white/70 to-transparent dark:from-slate-900 dark:via-slate-900/70 z-10" />
@@ -100,7 +100,7 @@ const TechStackGrid=() => {
           ))}
         </div>
       </div>
-      <div className="overflow-hidden relative  mx-12">
+      <div className="overflow-hidden relative  md:mx-12">
         {/* Left and Right gradient masks */}
         <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white via-white/70 to-transparent dark:from-slate-900 dark:via-slate-900/70 z-10" />
         <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white via-white/70 to-transparent dark:from-slate-900 dark:via-slate-900/70 z-10" />
