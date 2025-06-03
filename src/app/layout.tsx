@@ -23,7 +23,7 @@ const robotoRegular = localFont({
   variable: '--font-roboto',
 })
 export const metadata: Metadata = {
-  title: "Looper Soft LLC",
+  title: "Лүпер Софт ХХК",
   description: "your future is with us",
   keywords: "Looper Soft LLC, software development, web development, mobile development, software company, ERP, odoo erp ",
   icons: {
