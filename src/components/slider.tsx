@@ -26,10 +26,10 @@ const FirstSlide = () => (
       priority
     />
     <div className="relative animate-fade-scale">
-      <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display font-proxyma text-3xl tracking-tight text-transparent">
+      <p className="md:inline text-center bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display font-proxyma text-3xl tracking-tight text-transparent md:text-center">
         Ideas That Go Beyond Borders
       </p>
-      <p className="mt-3 font-proxyma text-2xl tracking-tight text-slate-400">
+      <p className="mt-3 font-proxyma  tracking-tight text-slate-400 md:text-2xl text-xl md:text-left text-center">
       Инновацаар ирээдүйгээ өөрчилж, дэлхийтэй хөл нийлүүлэн хөгжицгөөе!
       </p>
       {/* //Бид бүхэн тань хил хязгаарыг давсан санаанууд, шинэлэг боломжуудыг санал болгож байна.  */}
@@ -67,10 +67,10 @@ const SecondSlide = () => (
       priority
     />
     <div className="relative animate-fade-scale">
-      <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display font-proxyma text-3xl tracking-tight text-transparent">
+      <p className="md:inline text-center bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display font-proxyma text-3xl tracking-tight text-transparent">
         Fast, Reliable & Efficient Solutions 
       </p>
-      <p className="mt-3 font-proxyma text-2xl tracking-tight text-slate-400">
+      <p className="mt-3 font-proxyma tracking-tight text-slate-400 md:text-2xl text-xl md:text-left text-center">
         Бид хурдан, найдвартай, үр ашигтай шийдлүүдээр таны бизнесийг амжилттай хөгжүүлэхэд тусална.
       </p>
     </div>
@@ -105,10 +105,10 @@ const ThirdSlide = () => (
       priority
     />
     <div className="relative animate-fade-scale">
-      <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display font-proxyma text-3xl tracking-tight text-transparent">
+      <p className="md:inline text-center bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display font-proxyma text-3xl tracking-tight text-transparent">
         A 24/7 Available Support
       </p>
-      <p className="mt-3 font-proxyma text-2xl tracking-tight text-slate-400">
+      <p className="mt-3 font-proxyma tracking-tight text-slate-400 md:text-2xl text-xl md:text-left text-center">
       Бид танай байгууллагыг бүх цаг үед дэмжин ажиллахад бэлэн. Та бидэнд итгэж, бүх асуудлаа даатгаж бидэнд хандаарай.
       </p>
     </div>
@@ -130,6 +130,7 @@ const ThirdSlide = () => (
 const Slider = ({ index }: { index: number }) => {
   return (
     <div className="mx-auto h-[24rem] md:h-[28rem] lg:h-96 grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 lg:max-w-10xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12 ">
+      {/* <FirstSlide /> */}
       {index === 0 && <FirstSlide />}
       {index === 1 && <SecondSlide />}
       {index === 2 && <ThirdSlide />}
