@@ -27,7 +27,7 @@ function Header() {
     return (
       <header
         className={cn(
-          'sticky top-0 z-50 flex flex-none flex-wrap items-center justify-between bg-transparent px-4 py-5  transition duration-500 sm:px-6 lg:px-8 shadow-none',
+          'sticky top-0 z-50 flex flex-none flex-wrap items-center justify-between bg-transparent px-4 py-5  transition duration-500 sm:px-6 lg:px-20 shadow-none',
           isScrolled
             ? 'bg-white/70 backdrop-blur-sm [@supports(backdrop-filter:blur(0))]:bg-white/70 dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
             : 'bg-transparent',
@@ -71,7 +71,7 @@ function Header() {
             Бидэнтэй холбогдох
           </Link> 
         </div>
-        <div className="relative flex basis-0 items-center justify-end gap-5 sm:gap-7 md:px-5">
+        <div className="relative flex basis-0 items-center justify-end gap-5 sm:gap-7 pl-5">
           
           <ThemeToggle/>
           {/* <Link
