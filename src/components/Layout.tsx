@@ -57,7 +57,7 @@ function Header() {
             Бидний тухай
           </Link> 
           <Link
-            href="/"
+            href="/service"
             //className="inline-flex flex-nowrap items-center gap-1 whitespace-nowrap px-3 py-1 text-sm text-sky-500  hover:bg-sky-100 hover:text-sky-600 hover:ring-sky-500 dark:bg-sky-400/10 dark:text-sky-400 dark:ring-inset dark:ring-sky-400/20 dark:hover:bg-sky-400/10 dark:hover:text-sky-300 dark:hover:ring-sky-300 "
             className='text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300'
             >

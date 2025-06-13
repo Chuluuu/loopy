@@ -46,7 +46,7 @@ const AboutUs = () => {
             <div className='flex items-start'>
               <span className='mr-2 text-blue-500'>2022</span>
               <div className='flex flex-col gap-1'>
-                <div>
+                <div className='flex'>
                   <span className='mr-2 text-blue-500'>✓</span>
                   <span className='font-medium'>&quot;Номин Холдинг&quot; ХХК-д &quot;Odoo ERP&quot; системийн хувилбар ахиулалт</span>
                 </div>
@@ -55,11 +55,11 @@ const AboutUs = () => {
             <div className='flex items-start'>
               <span className='mr-2 text-blue-500'>2023</span>                
               <div className='flex flex-col gap-1'>
-                <div>
+                <div className='flex'>
                   <span className='mr-2 text-blue-500'>✓</span>
                   <span className='font-medium'>&quot;Номин Холдинг&quot; ХХК-д өгөгдлийн баазын засвар сайжруулалт</span>
                 </div>
-                <div>
+                <div className='flex'>
                   <span className='mr-2 text-blue-500'>✓</span>
                   <span className='font-medium'>&quot;ИСМ Биллинг Центр&quot; ХХК-д &quot;EDIMIS 3.0&quot; Фронтэнд вэб апп</span>
                 </div>
@@ -68,19 +68,19 @@ const AboutUs = () => {
             <div className='flex items-start'>
               <span className='mr-2 text-blue-500'>2024</span>                
               <div className='flex flex-col gap-1'>
-                <div>
+                <div className='flex'>
                   <span className='mr-2 text-blue-500'>✓</span>
-                  <span className='font-medium'>&quot;МУИС-ийн номын сангийн &quot;Коха&quot; системийн UI/UX дизайн шинэчлэл, дизайны дагуух өөрчлөлт</span>
+                  <span className='font-medium'>МУИС-ийн номын сангийн &quot;Коха&quot; системийн UI/UX дизайн шинэчлэл, дизайны дагуух өөрчлөлт</span>
                 </div>
-                <div>
+                <div className='flex'>
                   <span className='mr-2 text-blue-500'>✓</span>
                   <span className='font-medium'>&quot;ИСМ Биллинг Центр&quot; ХХК-д ECM-EBARIMT апп</span>
                 </div>
-                <div>
+                <div className='flex'>
                   <span className='mr-2 text-blue-500'>✓</span>
                   <span className='font-medium'>&quot;ИСМ Биллинг Центр&quot; ХХК-д ECM-LICENSE-MANAGER апп</span>
                 </div>
-                <div>
+                <div className='flex'>
                   <span className='mr-2 text-blue-500'>✓</span>
                   <span className='font-medium'>&quot;ИСМ Биллинг Центр&quot; ХХК-д MDM-FRONTEND, MDM-BACKEND апп</span>
                 </div>
@@ -89,7 +89,7 @@ const AboutUs = () => {
             <div className='flex items-start'>
               <span className='mr-2 text-blue-500'>2025</span>                
               <div className='flex flex-col gap-1'>
-                <div>
+                <div className='flex'>
                   <span className='mr-2 text-blue-500'>✓</span>
                   <span className='font-medium'>&quot;Парламентын судалгаа, хөгжлийн хүрээлэн&quot;-д Номын сангийн &quot;Коха&quot; системийн сайжруулалт</span>
                 </div>
