@@ -9,6 +9,7 @@ import { Hero } from './HeroSection'
 import { Footer } from './Footer'
 import { usePathname } from 'next/navigation'
 import TechStackGrid from './static/techstack'
+import { MobileNavigation } from './MobileNavigation'
 
 function Header() {
     let [isScrolled, setIsScrolled] = useState(false)
@@ -33,10 +34,10 @@ function Header() {
             : 'bg-transparent',
         )}
       >
-        <div className="mr-6 flex lg:hidden">
-          {/* <MobileNavigation /> */}
+        <div className="mr-6 flex md:hidden">
+          <MobileNavigation />
         </div>
-        <div className="relative flex flex-grow basis-0 items-center">
+        <div className="relative flex flex-grow basis-0 justify-center md:justify-start items-center">
           <Link href="/" aria-label="Home page">
             <SvgIcon name="logoblue" width={100} height={24} className="transition-all duration-1500 text-[#1b5a7a] dark:text-[#FCE28B]"  />
           </Link>

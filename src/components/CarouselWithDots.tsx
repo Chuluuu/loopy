@@ -47,7 +47,7 @@ export function CarouselWithDots() {
       </Carousel>
 
       {/* Dots */}
-      <div className="absolute z-[99] bottom-[-35%] lg:bottom-4  left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute z-[1] bottom-[-35%] lg:bottom-4  left-1/2 transform -translate-x-1/2 flex space-x-2">
         {items.map((_, index) => (
           <button
             key={index}
