@@ -67,70 +67,44 @@ type Props = {
 };
 
 const TechStackGrid=() => {
-  const stacks = techStacksMn;
+  const stacks = [...techStacksMn,...techStacksMn];
   return (
-    <div className="flex flex-col p-6 gap-2">
-      <div className="overflow-hidden relative  md:mx-12 mx-0">
-        {/* Left and Right gradient masks */}
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white via-white/70 to-transparent dark:from-slate-900 dark:via-slate-900/70 z-10" />
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white via-white/70 to-transparent dark:from-slate-900 dark:via-slate-900/70 z-10" />
+    
+    <section className="relative py-8 overflow-hidden  ">
+{/* Marquee Container */}
+      <div className="overflow-hidden relative mx-12">
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white via-white/50 to-transparent dark:from-slate-900 dark:via-slate-900/70 z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white via-white/50 to-transparent dark:from-slate-900 dark:via-slate-900/70 z-10" />
+        <div className="flex gap-3   animate-marquee w-max">
+          {stacks.map((row, index) => (
+            <div
+              key={index}
+              className="shrink-0 min-w-[160px] p-3 pb-4 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
+            >
+              {/* Category Title */}
+              <div className="mb-2 text-[11px] font-semibold tracking-[0.06em] uppercase text-sky-500 dark:text-sky-400 font-['Roboto']">
+                {row.title}
+              </div>
 
-        <div className="whitespace-nowrap flex gap-4 animate-slide">
-          {/* Duplicate for seamless looping */}
-          {[...Array(2)].map((_, loopIndex) => (
-            <div key={loopIndex} className="flex gap-4">
-              {stacks.map((section, index) => (
-                <div key={index} className="flex gap-2">
-                  {section.data.map((item, i) => (
-                    <div
-                      key={`${loopIndex}-${index}-${i}`}
-                      className="flex items-center gap-2 p-2 rounded-xl shadow-sm border hover:bg-blue-50 dark:hover:bg-slate-700 bg-white dark:bg-slate-800 transition"
-                    >
-                      <div className="text-xl text-blue-600">
+              {/* Tags */}
+              <div className="flex flex-wrap gap-1">
+                {row.data.map((item, itemIndex) => (
+                  <span
+                    key={itemIndex}
+                    className="flex items-center p-2 gap-2 text-xs rounded-full bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 font-['Roboto']"
+                  >
+                    <div className="text-xl text-blue-600">
                         {iconMap[item.icon] ?? iconMap["custom:question"]}
                       </div>
-                      <div className="text-xs text-center whitespace-nowrap">
-                        {item.name}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ))}
+                    {item.name}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
+          </div>
         </div>
-      </div>
-      <div className="overflow-hidden relative  md:mx-12">
-        {/* Left and Right gradient masks */}
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white via-white/70 to-transparent dark:from-slate-900 dark:via-slate-900/70 z-10" />
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white via-white/70 to-transparent dark:from-slate-900 dark:via-slate-900/70 z-10" />
-
-        <div className="whitespace-nowrap flex gap-4 animate-slideReverse">
-          {/* Duplicate for seamless looping */}
-          {[...Array(2)].map((_, loopIndex) => (
-            <div key={loopIndex} className="flex gap-4">
-              {stacks.map((section, index) => (
-                <div key={index} className="flex gap-2">
-                  {section.data.map((item, i) => (
-                    <div
-                      key={`${loopIndex}-${index}-${i}`}
-                      className="flex items-center gap-2 p-2 rounded-xl shadow-sm border hover:bg-blue-50 dark:hover:bg-slate-700 bg-white dark:bg-slate-800 transition"
-                    >
-                      <div className="text-xl text-blue-600">
-                        {iconMap[item.icon] ?? iconMap["custom:question"]}
-                      </div>
-                      <div className="text-xs text-center whitespace-nowrap">
-                        {item.name}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+        </section>
   );
 };
 

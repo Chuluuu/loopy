@@ -14,20 +14,24 @@ const FooterLink = (props: React.ComponentProps<typeof Link>) => {
 
 export const Footer = () => {
   const year = new Date().getFullYear()
+   const linkClasses = `
+    font-['Roboto'] text-sm
+    text-slate-400 dark:text-slate-500
+    transition-colors duration-150
+    hover:text-slate-600 dark:hover:text-slate-300
+    bg-transparent border-none cursor-pointer
+  `
   return (
-    <div className="relative mx-auto flex w-full flex-auto justify-center sm:px-2 lg:px-8 xl:px-12">
-      <div className="absolute h-px w-full bg-slate-100 dark:bg-slate-800" />
-      <div className="my-4 flex max-w-[100rem] flex-wrap gap-6 p-6">
-        <FooterLink href="/">
+    <footer className="flex flex-wrap gap-6 px-12 py-5 border-t border-slate-100 dark:border-slate-800">
+        <FooterLink href="/" className={`${linkClasses} cursor-default`}>
           &copy; {year} Looper Soft LLC
         </FooterLink>
-        <FooterLink href="https://x.com/">&#x1D54F;</FooterLink>
-        {/* <FooterLink href="https://forum.inkdrop.app/">User Forum</FooterLink> */}
-        {/* <FooterLink href="https://www.inkdrop.app/pricing">Pricing</FooterLink> */}
-        {/* <FooterLink href="https://my.inkdrop.app/plugins">Plugins</FooterLink> */}
-        <FooterLink href="/faq">Түгээмэл асуултууд</FooterLink>
-        <FooterLink href="/contact">Бидэнтэй холбогдох</FooterLink>
-      </div>
-    </div>
+        <FooterLink className={linkClasses} href="https://x.com/">&#x1D54F;</FooterLink>
+        
+        <FooterLink className={linkClasses} href="/faq">Түгээмэл асуултууд</FooterLink>
+        <FooterLink className={linkClasses} href="/contact">Бидэнтэй холбогдох</FooterLink>
+      
+    </footer>
   )
 }
+
