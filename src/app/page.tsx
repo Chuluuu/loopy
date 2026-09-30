@@ -1,14 +1,25 @@
-'use client'
-import Image from "next/image";
-import ServiceTeaser from "@/components/ServiceTeaser";
-import {Hero} from "@/components/HeroSection";
-import { usePathname } from 'next/navigation'
+import { Hero } from "@/components/home/Hero";
+import { Clients } from "@/components/home/Clients";
+import { Doowy } from "@/components/home/Doowy";
+import { Work } from "@/components/home/Work";
+import { Statement } from "@/components/home/Statement";
+import { Services } from "@/components/home/Services";
+import { Process } from "@/components/home/Process";
+import { Stack } from "@/components/home/Stack";
+import { ContactCta } from "@/components/home/ContactCta";
+
 export default function Home() {
-  let pathname = usePathname()
-  let isHomePage = pathname === '/'
   return (
-    <main className="flex  w-full flex-col min-h-screen ">
-      {isHomePage &&(<><Hero/> <ServiceTeaser/></>)}
+    <main>
+      <Hero />
+      <Clients />
+      <Doowy />
+      <Work />
+      <Services />
+      <Statement />
+      <Process />
+      <Stack />
+      <ContactCta />
     </main>
   );
 }

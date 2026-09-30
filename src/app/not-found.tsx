@@ -1,25 +1,23 @@
 import Link from 'next/link'
+import { ArrowLeft } from 'lucide-react'
 
 export default function NotFound() {
   return (
-    <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16 h-full">
-      <div className="flex h-full flex-col items-center justify-center text-center">
-        <p className="font-display text-sm font-medium text-slate-900 dark:text-white">
-          404
-        </p>
-        <h1 className="mt-3 font-display text-3xl tracking-tight text-slate-900 dark:text-white">
-          Page not found
-        </h1>
-        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-          Sorry, we couldn’t find the page you’re looking for.
-        </p>
-        <Link
-          href="/"
-          className="mt-8 text-sm font-medium text-slate-900 dark:text-white"
-        >
-          Нүүр хуудас руу буцах
-        </Link>
-      </div>
-    </div>
+    <main className="mx-auto flex min-h-[60vh] max-w-7xl flex-col justify-center px-4 py-20 sm:px-6 lg:px-8">
+      <p className="text-sm font-semibold tabular-nums text-brand-600 dark:text-brand-300">404</p>
+      <h1 className="mt-3 text-balance text-[2rem] font-semibold leading-tight tracking-tight text-zinc-950 sm:text-[2.5rem] dark:text-white">
+        Хуудас олдсонгүй
+      </h1>
+      <p className="mt-4 max-w-[48ch] leading-7 text-zinc-600 dark:text-zinc-400">
+        Таны хайсан хуудас устсан эсвэл хаяг нь өөрчлөгдсөн байж болзошгүй.
+      </p>
+      <Link
+        href="/"
+        className="group mt-8 inline-flex w-fit items-center gap-2 text-sm font-medium text-brand-600 hover:text-brand-700 dark:text-brand-300 dark:hover:text-brand-200"
+      >
+        <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" strokeWidth={2} />
+        Нүүр хуудас руу буцах
+      </Link>
+    </main>
   )
 }

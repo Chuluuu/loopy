@@ -35,12 +35,31 @@ const config = {
         '9xl': ['8rem', { lineHeight: '1' }],
       },
       fontFamily: {
-        // sans: ["var(--font-inter)", ...fontFamily.sans],
-        sans: ["var(--font-roboto)", ...fontFamily.sans],
-        display: ['var(--font-lexend)', { fontFeatureSettings: '"ss01"' }],
-        
+        sans: ["var(--font-onest)", ...fontFamily.sans],
+        display: ["var(--font-onest)", ...fontFamily.sans],
       },
       colors: {
+        // Brand teal, anchored on the logo color #1b5a7a (brand-600)
+        brand: {
+          50: "#eef6f9",
+          100: "#d6e9f0",
+          200: "#aed2e1",
+          300: "#7cb4cb",
+          400: "#4a93b0",
+          500: "#2b7596",
+          600: "#1b5a7a",
+          700: "#174a65",
+          800: "#143d53",
+          900: "#102f40",
+          950: "#0a1f2b",
+        },
+        // Logo gold (the dark-mode logo color); used only on brand-teal surfaces
+        gold: {
+          100: "#fef6d8",
+          200: "#fdedb3",
+          300: "#FCE28B",
+          400: "#f6cf5a",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

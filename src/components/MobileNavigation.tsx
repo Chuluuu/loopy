@@ -5,9 +5,8 @@ import Link from 'next/link'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { SvgIcon } from './SvgIcon'
+import { NAV_LINKS } from './site'
 
-// import { Logomark } from '@/components/Logo'
-// import { Navigation } from '@/components/Navigation'
 
 function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -54,16 +53,6 @@ export function MobileNavigation() {
   let [isOpen, setIsOpen] = useState(false)
   let close = useCallback(() => setIsOpen(false), [setIsOpen])
 
-  function onLinkClick(event: React.MouseEvent<HTMLAnchorElement>) {
-    let link = event.currentTarget
-    if (
-      link.pathname + link.search + link.hash ===
-      window.location.pathname + window.location.search + window.location.hash
-    ) {
-      close()
-    }
-  }
-
   return (
     <>
       <button
@@ -72,7 +61,7 @@ export function MobileNavigation() {
         className="relative"
         aria-label="Open navigation"
       >
-        <MenuIcon className="h-6 w-6 stroke-slate-500" />
+        <MenuIcon className="h-6 w-6 stroke-zinc-600 dark:stroke-zinc-400" />
       </button>
       <Suspense fallback={null}>
         <CloseOnNavigation close={close} />
@@ -80,54 +69,34 @@ export function MobileNavigation() {
       <Dialog
         open={isOpen}
         onClose={() => close()}
-        className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-slate-900/50 pr-10 backdrop-blur lg:hidden"
+        className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-zinc-950/40 pr-10 backdrop-blur-sm md:hidden"
         aria-label="Navigation"
       >
-        <DialogPanel className="min-h-full w-full max-w-xs bg-white px-4 pb-12 pt-5 sm:px-6 dark:bg-slate-900">
+        <DialogPanel className="min-h-full w-full max-w-xs bg-white px-4 pb-12 pt-5 sm:px-6 dark:bg-zinc-950">
           <div className="flex items-center justify-between">
             <button
               type="button"
               onClick={() => close()}
               aria-label="Close navigation"
             >
-              <CloseIcon className="h-6 w-6 stroke-slate-500" />
+              <CloseIcon className="h-6 w-6 stroke-zinc-600 dark:stroke-zinc-400" />
             </button>
-            <Link href="/" className="mr-8" aria-label="Home page">
-              {/* <Logomark className="h-9 w-9" /> */}
-              <SvgIcon name="logoblue" width={100} height={24} className="transition-all duration-1500 text-[#1b5a7a] dark:text-[#FCE28B]"  />
+            <Link href="/" className="mr-8" aria-label="Нүүр хуудас">
+              <SvgIcon name="logoblue" width={100} height={24} className="text-brand-600 dark:text-[#FCE28B]" />
             </Link>
           </div>
-          {/* <Navigation className="mt-5 px-1" onLinkClick={onLinkClick} /> */}
-          <div className="mt-8 px-1 relative flex flex-col items-start justify-start gap-5">
-          <Link
-            href="/"
-            //className="inline-flex flex-nowrap items-center gap-1 whitespace-nowrap px-3 py-1 text-sm text-sky-500  hover:bg-sky-100 hover:text-sky-600 hover:ring-sky-500 dark:bg-sky-400/10 dark:text-sky-400 dark:ring-inset dark:ring-sky-400/20 dark:hover:bg-sky-400/10 dark:hover:text-sky-300 dark:hover:ring-sky-300 "
-            className='text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300'
-            >
-            Нүүр Хуудас
-          </Link> 
-          <Link
-            href="/about"
-            //className="inline-flex flex-nowrap items-center gap-1 whitespace-nowrap px-3 py-1 text-sm text-sky-500  hover:bg-sky-100 hover:text-sky-600 hover:ring-sky-500 dark:bg-sky-400/10 dark:text-sky-400 dark:ring-inset dark:ring-sky-400/20 dark:hover:bg-sky-400/10 dark:hover:text-sky-300 dark:hover:ring-sky-300 "
-            className='text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300'
-            >
-            Бидний тухай
-          </Link> 
-          <Link
-            href="/service"
-            //className="inline-flex flex-nowrap items-center gap-1 whitespace-nowrap px-3 py-1 text-sm text-sky-500  hover:bg-sky-100 hover:text-sky-600 hover:ring-sky-500 dark:bg-sky-400/10 dark:text-sky-400 dark:ring-inset dark:ring-sky-400/20 dark:hover:bg-sky-400/10 dark:hover:text-sky-300 dark:hover:ring-sky-300 "
-            className='text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300'
-            >
-            Үйлчилгээ
-          </Link> 
-          <Link
-            href="/contact"
-            //className="inline-flex flex-nowrap items-center gap-1 whitespace-nowrap px-3 py-1 text-sm text-sky-500  hover:bg-sky-100 hover:text-sky-600 hover:ring-sky-500 dark:bg-sky-400/10 dark:text-sky-400 dark:ring-inset dark:ring-sky-400/20 dark:hover:bg-sky-400/10 dark:hover:text-sky-300 dark:hover:ring-sky-300 "
-            className='text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300'
-            >
-            Бидэнтэй холбогдох
-          </Link> 
-        </div>
+          <nav className="mt-8 flex flex-col gap-1">
+            {[...NAV_LINKS, { label: 'Холбогдох', href: '/contact' }].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={close}
+                className="rounded-lg px-2 py-2.5 text-base text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-900"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </DialogPanel>
       </Dialog>
     </>

@@ -1,3 +1,5 @@
+'use client'
+
 import Login from "@/components/icons/login-1.svg";
 import Logo from "@/components/icons/logo.svg";
 import LogoBlue from "@/components/icons/logoblue.svg";

@@ -1,114 +1,19 @@
-'use client'
-import { cn } from '@/lib/utils'
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
-import {SvgIcon} from '@/components/SvgIcon'
-import ThemeToggle from './ThemeToggle'
-import { Hero } from './HeroSection'
+import React from 'react'
+import Header from './Header'
 import { Footer } from './Footer'
-import { usePathname } from 'next/navigation'
-import TechStackGrid from './static/techstack'
-import { MobileNavigation } from './MobileNavigation'
-import Header from "./Header";
-import ServiceTeaser from './ServiceTeaser'
-// function Header() {
-//     let pathname = usePathname()
-//     let [isScrolled, setIsScrolled] = useState(false)
-  
-//     useEffect(() => {
-//       function onScroll() {
-//         setIsScrolled(window.scrollY > 0)
-//       }
-//       onScroll()
-//       window.addEventListener('scroll', onScroll, { passive: true })
-//       return () => {
-//         window.removeEventListener('scroll', onScroll)
-//       }
-//     }, [])
-  
-//     return (
-//       <header
-//         className={cn(
-//           'sticky top-0 z-50 flex flex-none flex-wrap items-center justify-between bg-transparent px-4 py-5  transition duration-500 sm:px-6 lg:px-20 shadow-none',
-//           isScrolled
-//             ? 'bg-white/70 backdrop-blur-sm [@supports(backdrop-filter:blur(0))]:bg-white/70 dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
-//             : 'bg-transparent',
-//         )}
-//       >
-//         <div className="mr-6 flex md:hidden">
-//           <MobileNavigation />
-//         </div>
-//         <div className="relative flex flex-grow basis-0 justify-center md:justify-start items-center">
-//           <Link href="/" aria-label="Home page">
-//             <SvgIcon name="logoblue" width={100} height={24} className="transition-all duration-1500 text-[#1b5a7a] dark:text-[#FCE28B]"  />
-//           </Link>
-//         </div>
-//         <div className="relative flex-grow hidden items-center justify-end gap-5 md:flex">
-//           <Link
-//             href="/"
-//             //className="inline-flex flex-nowrap items-center gap-1 whitespace-nowrap px-3 py-1 text-sm text-sky-500  hover:bg-sky-100 hover:text-sky-600 hover:ring-sky-500 dark:bg-sky-400/10 dark:text-sky-400 dark:ring-inset dark:ring-sky-400/20 dark:hover:bg-sky-400/10 dark:hover:text-sky-300 dark:hover:ring-sky-300 "
-//             className={cn(
-//     'text-slate-500 before:hidden before:bg-slate-300 hover:text-sky-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-sky-400',
-    
-//   )}>
-//             Нүүр Хуудас
-//           </Link> 
-//           <Link
-//             href="/about"
-//             //className="inline-flex flex-nowrap items-center gap-1 whitespace-nowrap px-3 py-1 text-sm text-sky-500  hover:bg-sky-100 hover:text-sky-600 hover:ring-sky-500 dark:bg-sky-400/10 dark:text-sky-400 dark:ring-inset dark:ring-sky-400/20 dark:hover:bg-sky-400/10 dark:hover:text-sky-300 dark:hover:ring-sky-300 "
-//             className={cn(
-//     'text-slate-500 before:hidden before:bg-slate-300 hover:text-sky-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-sky-400',
-//     pathname === '/about' && ' text-sky-600 dark:text-sky-400'
-//   )}
-//   aria-current={pathname === '/about' ? 'page' : undefined}
-// >
-//             Бидний тухай
-//           </Link> 
-//           <Link
-//             href="/service"
-//             //className="inline-flex flex-nowrap items-center gap-1 whitespace-nowrap px-3 py-1 text-sm text-sky-500  hover:bg-sky-100 hover:text-sky-600 hover:ring-sky-500 dark:bg-sky-400/10 dark:text-sky-400 dark:ring-inset dark:ring-sky-400/20 dark:hover:bg-sky-400/10 dark:hover:text-sky-300 dark:hover:ring-sky-300 "
-//             className={cn(
-//     'text-slate-500 before:hidden before:bg-slate-300 hover:text-sky-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-sky-400',
-//     pathname === '/service' && ' text-sky-600 dark:text-sky-400'
-//   )}
-//   aria-current={pathname === '/service' ? 'page' : undefined}
-// >
-//             Үйлчилгээ
-//           </Link> 
-//           <Link
-//             href="/contact"
-//             //className="inline-flex flex-nowrap items-center gap-1 whitespace-nowrap px-3 py-1 text-sm text-sky-500  hover:bg-sky-100 hover:text-sky-600 hover:ring-sky-500 dark:bg-sky-400/10 dark:text-sky-400 dark:ring-inset dark:ring-sky-400/20 dark:hover:bg-sky-400/10 dark:hover:text-sky-300 dark:hover:ring-sky-300 "
-//             className={cn(
-//     'text-slate-500 before:hidden before:bg-slate-300 hover:text-sky-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-sky-400',
-//     pathname === '/contact' && ' text-sky-600 dark:text-sky-400'
-//   )}
-//   aria-current={pathname === '/contact' ? 'page' : undefined}
-// >
-//             Бидэнтэй холбогдох
-//           </Link> 
-//         </div>
-//         <div className="relative flex basis-0 items-center justify-end gap-5 sm:gap-7 pl-5">
-          
-//           <ThemeToggle/>
-//           {/* <Link
-//             href="/"
-//             className="inline-flex flex-nowrap items-center gap-1 whitespace-nowrap rounded-full  px-3 py-1 text-sm text-sky-500 ring-1 ring-sky-300 hover:bg-sky-100 hover:text-sky-600 hover:ring-sky-500 dark:bg-sky-400/10 dark:text-sky-400 dark:ring-inset dark:ring-sky-400/20 dark:hover:bg-sky-400/10 dark:hover:text-sky-300 dark:hover:ring-sky-300 ">
-//             <SvgIcon name="login" width={14} height={14} />
-//             Log in
-//           </Link> */}
-//         </div>
-//       </header>
-//     )
-//   }
-function Layout({children}:{children:React.ReactNode}) {
-  
+
+function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex w-full flex-col">
-        <Header/>
-        {children}
-        <TechStackGrid />
-        <Footer/>
+      <a
+        href="#content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-zinc-900 focus:shadow-lg"
+      >
+        Үндсэн агуулга руу шилжих
+      </a>
+      <Header />
+      <div id="content" className="flex-1">{children}</div>
+      <Footer />
     </div>
   )
 }

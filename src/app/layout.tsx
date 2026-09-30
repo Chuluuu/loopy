@@ -1,31 +1,22 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter as FontSans } from "next/font/google"
-import localFont from 'next/font/local'
+import { Onest } from "next/font/google"
 import { Providers } from '@/app/providers'
 
 import { cn } from "@/lib/utils"
 import Layout from "@/components/Layout";
-const fontSans = FontSans({
-  subsets: ["latin"],
+
+const onest = Onest({
+  subsets: ["latin", "cyrillic", "cyrillic-ext"],
   display: 'swap',
-  variable: "--font-inter",
+  variable: "--font-onest",
 })
 
-const lexend = localFont({
-  src: '../fonts/lexend.woff2',
-  display: 'swap',
-  variable: '--font-lexend',
-})
-const robotoRegular = localFont({
-  src: '../fonts/Roboto-Regular.woff2',
-  display: 'swap',
-  variable: '--font-roboto',
-})
 export const metadata: Metadata = {
-  title: "Лүпер Софт ХХК",
-  description: "your future is with us",
-  keywords: "Looper Soft LLC, software development, web development, mobile development, software company, ERP, odoo erp ",
+  metadataBase: new URL("https://looper.mn"),
+  title: "Лүпер Софт ХХК | ERP, вэб, мобайл систем хөгжүүлэлт",
+  description: "Лүпер Софт нь өөрсдийн Doowy ERP платформ, Odoo ERP нэвтрүүлэлт, вэб болон мобайл аппликешн, Коха номын сангийн системийн хөгжүүлэлт хийдэг Монголын програм хангамжийн компани.",
+  keywords: "Looper Soft LLC, Лүпер Софт, Doowy, Doowy ERP, software development, web development, mobile development, software company, ERP, odoo erp, Koha",
   icons: {
     icon: [
       {
@@ -60,6 +51,14 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/favicon_io/site.webmanifest",
+  openGraph: {
+    type: "website",
+    locale: "mn_MN",
+    siteName: "Лүпер Софт ХХК",
+    title: "Лүпер Софт ХХК | ERP, вэб, мобайл систем хөгжүүлэлт",
+    description: "Doowy ERP платформ, Odoo ERP нэвтрүүлэлт, вэб болон мобайл аппликешн, Коха номын сангийн системийн хөгжүүлэлт.",
+    images: [{ url: "/favicon_io/android-chrome-512x512.png", width: 512, height: 512 }],
+  },
 };
 
 export default function RootLayout({
@@ -68,14 +67,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"  suppressHydrationWarning
-    className={cn('h-full antialiased',
-      robotoRegular.variable,
-      fontSans.variable,
-     lexend.variable
-    )}>
-       
-      <body className="flex min-h-full bg-white dark:bg-slate-900 " suppressHydrationWarning> 
+    <html lang="mn" suppressHydrationWarning
+    className={cn('h-full antialiased', onest.variable)}>
+      <body className="flex min-h-full bg-white font-sans text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100" suppressHydrationWarning>
         <Providers>
           <Layout>{children}</Layout>
         </Providers>
